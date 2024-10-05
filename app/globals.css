@@ -7,6 +7,9 @@
     color-scheme: dark;
   }
 }
+body {
+  font-family: 'Publico Text Mono', monospace;
+}
 
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {
   img[loading='lazy'] {
