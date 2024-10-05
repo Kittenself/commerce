@@ -1,4 +1,4 @@
-import { HIDDEN_PRODUCT_TAG, TAGS } from 'lib/constants';
+import { HIDDEN_PRODUCT_TAG, SHOPIFY_GRAPHQL_API_ENDPOINT, TAGS } from 'lib/constants';
 import { isShopifyError } from 'lib/type-guards';
 import { ensureStartsWith } from 'lib/utils';
 import { revalidateTag } from 'next/cache';
@@ -53,12 +53,7 @@ import {
 const domain = process.env.SHOPIFY_STORE_DOMAIN
   ? ensureStartsWith(process.env.SHOPIFY_STORE_DOMAIN, 'https://')
   : '';
-
-if (!domain) {
-  throw new Error('SHOPIFY_STORE_DOMAIN environment variable is not set');
-}
-
-const endpoint = `${domain}/api/2023-10/graphql.json`;
+const endpoint = `${domain}${SHOPIFY_GRAPHQL_API_ENDPOINT}`;
 const key = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN!;
 
 type ExtractVariables<T> = T extends { variables: object } ? T['variables'] : never;
@@ -77,19 +72,11 @@ export async function shopifyFetch<T>({
   variables?: ExtractVariables<T>;
 }): Promise<{ status: number; body: T } | never> {
   try {
-    console.log('Shopify API Endpoint:', endpoint);
-    console.log('SHOPIFY_STORE_DOMAIN:', process.env.SHOPIFY_STORE_DOMAIN);
-    
-    if (!endpoint.startsWith('https://')) {
-      throw new Error(`Invalid endpoint: ${endpoint}. Make sure SHOPIFY_STORE_DOMAIN is set correctly.`);
-    }
-
     const result = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'X-Shopify-Storefront-Access-Token': key,
-        'Shopify-Storefront-Api-Version': '2023-10',
         ...headers
       },
       body: JSON.stringify({
@@ -111,7 +98,6 @@ export async function shopifyFetch<T>({
       body
     };
   } catch (e) {
-    console.error('Shopify fetch error:', e);
     if (isShopifyError(e)) {
       throw {
         cause: e.cause?.toString() || 'unknown',
