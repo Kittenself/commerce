@@ -72,6 +72,7 @@ export async function shopifyFetch<T>({
   variables?: ExtractVariables<T>;
 }): Promise<{ status: number; body: T } | never> {
   try {
+    console.log('Shopify API Endpoint:', endpoint);
     const result = await fetch(endpoint, {
       method: 'POST',
       headers: {
@@ -99,6 +100,7 @@ export async function shopifyFetch<T>({
       body
     };
   } catch (e) {
+    console.error('Shopify fetch error:', e);
     if (isShopifyError(e)) {
       throw {
         cause: e.cause?.toString() || 'unknown',
