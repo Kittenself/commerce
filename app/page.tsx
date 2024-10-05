@@ -1,4 +1,3 @@
-import { Carousel } from 'components/carousel';
 import { ThreeItemGrid } from 'components/grid/three-items';
 import Footer from 'components/layout/footer';
 import Image from 'next/image';
@@ -21,7 +20,7 @@ export default function HomePage() {
         </Link>
       </nav>
       <ThreeItemGrid />
-      <Carousel />
+      
       <Footer />
     </>
   );
