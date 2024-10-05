@@ -53,6 +53,11 @@ import {
 const domain = process.env.SHOPIFY_STORE_DOMAIN
   ? ensureStartsWith(process.env.SHOPIFY_STORE_DOMAIN, 'https://')
   : '';
+
+if (!domain) {
+  throw new Error('SHOPIFY_STORE_DOMAIN environment variable is not set');
+}
+
 const endpoint = `${domain}/api/2023-10/graphql.json`;
 const key = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN!;
 
@@ -73,6 +78,12 @@ export async function shopifyFetch<T>({
 }): Promise<{ status: number; body: T } | never> {
   try {
     console.log('Shopify API Endpoint:', endpoint);
+    console.log('SHOPIFY_STORE_DOMAIN:', process.env.SHOPIFY_STORE_DOMAIN);
+    
+    if (!endpoint.startsWith('https://')) {
+      throw new Error(`Invalid endpoint: ${endpoint}. Make sure SHOPIFY_STORE_DOMAIN is set correctly.`);
+    }
+
     const result = await fetch(endpoint, {
       method: 'POST',
       headers: {
