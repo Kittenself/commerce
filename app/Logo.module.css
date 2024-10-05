@@ -1,10 +1,15 @@
 .logoLink {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
-
-.logo {
-  object-fit: contain;
-}
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  
+  .logoLink:hover {
+    transform: scale(1.05);
+  }
+  
+  .logo {
+    object-fit: contain;
+    object-position: left;
+    border: 1px solid #D3D3D3;
+    border-radius: 4px;
+  }
