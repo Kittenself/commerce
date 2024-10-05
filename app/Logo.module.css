@@ -10,6 +10,6 @@
   .logo {
     object-fit: contain;
     object-position: left;
-    border: 1px solid #D3D3D3;
+    border: 1px solid #000000;
     border-radius: 4px;
   }
