@@ -16,7 +16,27 @@ body {
     clip-path: inset(0.6px);
   }
 }
+.text-carousel-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f4eec9;
+  padding: 2px 0;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
 
+.text-carousel {
+  display: inline-flex;
+  white-space: nowrap;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.text-carousel-item {
+  display: inline-block;
+  padding: 0 20px;
+}
 a,
 input,
 button {
