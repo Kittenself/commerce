@@ -38,21 +38,6 @@ export const metadata = {
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const cartId = cookies().get('cartId')?.value;
-  
-  // Check for required Shopify environment variables
-  const requiredEnvVars = [
-    'SHOPIFY_STORE_DOMAIN',
-    'SHOPIFY_STOREFRONT_ACCESS_TOKEN',
-    'SHOPIFY_REVALIDATION_SECRET'
-  ];
-
-  const missingEnvVars = requiredEnvVars.filter(varName => !process.env[varName]);
-
-  if (missingEnvVars.length > 0) {
-    console.error(`Missing required environment variables: ${missingEnvVars.join(', ')}`);
-    throw new Error('Missing required Shopify environment variables');
-  }
-
   // Don't await the fetch, pass the Promise to the context provider
   const cart = getCart(cartId);
 
