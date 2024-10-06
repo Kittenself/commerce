@@ -1,7 +1,8 @@
 "use client";
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Rnd } from 'react-rnd';
 import styles from './Windows31.module.css';
+import { useWindowContext } from './windowcontext';
 
 interface WindowProps {
   windowId: string;
@@ -12,6 +13,27 @@ interface WindowProps {
 
 const Window: React.FC<WindowProps> = ({ windowId, title, children, style }) => {
   const rndRef = useRef(null);
+  const { windowState, bringToFront, hideWindow } = useWindowContext();
+
+  useEffect(() => {
+    if (!windowState[windowId]) {
+      bringToFront(windowId);
+    }
+  }, [windowId, bringToFront, windowState]);
+
+  const handleMouseDown = () => {
+    bringToFront(windowId);
+  };
+
+  const handleCloseClick = (e: React.MouseEvent) => {
+    if (e.detail === 2) { // Double click
+      hideWindow(windowId);
+    }
+  };
+
+  if (!windowState[windowId]?.isVisible) {
+    return null;
+  }
 
   return (
     <Rnd
@@ -24,11 +46,12 @@ const Window: React.FC<WindowProps> = ({ windowId, title, children, style }) => 
       }}
       bounds="parent"
       dragHandleClassName={`.${styles.windowHeader}`}
-      className={`window ${styles.window}`}
-      style={{ zIndex: 1, ...style }}
+      className={`window ${styles.window} ${windowState[windowId]?.zIndex === Math.max(...Object.values(windowState).map(w => w.zIndex)) ? styles.selectedWindow : ''}`}
+      style={{ zIndex: windowState[windowId]?.zIndex || 1, ...style }}
+      onMouseDown={handleMouseDown}
     >
       <div className={styles.windowHeader}>
-        <div className={styles.windowClose}></div>
+        <div className={styles.windowClose} onMouseDown={handleCloseClick}></div>
         <div className={styles.windowTitle}>{title}</div>
       </div>
       <div className={styles.windowInner}>{children}</div>
@@ -36,15 +59,5 @@ const Window: React.FC<WindowProps> = ({ windowId, title, children, style }) => 
   );
 };
 
-const SampleWindow = () => {
-  return (
-    <Window windowId="sampleWindow" title="Sample Window">
-      <div>
-        <p>This is a sample window content.</p>
-        <button onClick={() => alert('Hello!')}>Click Me</button>
-      </div>
-    </Window>
-  );
-};
+export default Window;
 
-export default SampleWindow;
