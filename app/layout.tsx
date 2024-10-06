@@ -1,4 +1,5 @@
 import { CartProvider } from 'components/cart/cart-context';
+import Footer from 'components/layout/footer';
 import { Navbar } from 'components/layout/navbar';
 import { GeistSans } from 'geist/font/sans';
 import { getCart } from 'lib/shopify';
@@ -37,7 +38,6 @@ export const metadata = {
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const cartId = cookies().get('cartId')?.value;
-  // Don't await the fetch, pass the Promise to the context provider
   const cart = getCart(cartId);
 
   return (
@@ -48,8 +48,8 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           <main>
             {children}
             <Toaster closeButton />
-            
           </main>
+          <Footer /> {/* Ensure Footer is outside of main for fixed positioning */}
         </CartProvider>
       </body>
     </html>
