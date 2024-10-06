@@ -25,8 +25,9 @@ const Window: React.FC<WindowProps> = ({ windowId, title, children, style }) => 
     bringToFront(windowId);
   };
 
-  const handleCloseClick = () => {
-    hideWindow(windowId); // Changed to onClick for better interaction
+  const handleCloseClick = (event: React.MouseEvent) => {
+    event.stopPropagation(); // Prevent the click from bubbling up
+    hideWindow(windowId);
   };
 
   if (!windowState[windowId]?.isVisible) {
@@ -49,7 +50,7 @@ const Window: React.FC<WindowProps> = ({ windowId, title, children, style }) => 
       onMouseDown={handleMouseDown}
     >
       <div className={styles.windowHeader}>
-        <div className={styles.windowClose} onClick={handleCloseClick}></div> {/* Changed to onClick */}
+        <div className={styles.windowClose} onDoubleClick={handleCloseClick}></div> {/* Changed to onDoubleClick */}
         <div className={styles.windowTitle}>{title}</div>
       </div>
       <div className={styles.windowInner}>{children}</div>
