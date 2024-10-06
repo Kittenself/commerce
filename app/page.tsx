@@ -1,4 +1,3 @@
-import { ThreeItemGrid } from 'components/grid/three-items';
 import Footer from 'components/layout/footer';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -19,7 +18,7 @@ export default function HomePage() {
           />
         </Link>
       </nav>
-      <ThreeItemGrid />
+      wow
       
       <Footer />
     </>
