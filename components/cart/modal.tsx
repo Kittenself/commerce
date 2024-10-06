@@ -178,7 +178,7 @@ export default function CartModal() {
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 dark:border-neutral-700">
                       <p>Taxes</p>
                       <Price
-                        className="text-right text-base text-black dark:text-white"
+                        className="text-right text-base text-black dark:text-black"
                         amount={cart.cost.totalTaxAmount.amount}
                         currencyCode={cart.cost.totalTaxAmount.currencyCode}
                       />
@@ -218,7 +218,7 @@ function CheckoutButton() {
       type="submit"
       disabled={pending}
     >
-      {pending ? <LoadingDots className="bg-white" /> : 'Proceed to Checkout'}
+      {pending ? <LoadingDots className="bg-white" /> : 'Checkout'}
     </button>
   );
 }
