@@ -44,7 +44,7 @@ const Window: React.FC<WindowProps> = ({ windowId, title, children, style }) => 
         height: 'auto',
       }}
       bounds="parent"
-      dragHandleClassName={`.${styles.windowHeader}`}
+      dragHandleClassName={styles.windowHeader} // Ensure this matches the CSS class
       className={`window ${styles.window} ${windowState[windowId]?.zIndex === Math.max(...Object.values(windowState).map(w => w.zIndex)) ? styles.selectedWindow : ''}`}
       style={{ zIndex: windowState[windowId]?.zIndex || 1, ...style }}
       onMouseDown={handleMouseDown}
