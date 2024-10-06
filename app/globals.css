@@ -53,5 +53,15 @@ button {
   }
 }
 
+/* In your CSS file */
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white; /* or any background color */
+  z-index: 10; /* Ensure it stays above other content */
+}
+
 
 
