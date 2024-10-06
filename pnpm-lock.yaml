@@ -35,6 +35,9 @@ importers:
       react-resizable:
         specifier: ^3.0.5
         version: 3.0.5(react-dom@19.0.0-rc-3208e73e-20240730(react@19.0.0-rc-3208e73e-20240730))(react@19.0.0-rc-3208e73e-20240730)
+      react-rnd:
+        specifier: ^10.4.13
+        version: 10.4.13(react-dom@19.0.0-rc-3208e73e-20240730(react@19.0.0-rc-3208e73e-20240730))(react@19.0.0-rc-3208e73e-20240730)
       sonner:
         specifier: ^1.5.0
         version: 1.5.0(react-dom@19.0.0-rc-3208e73e-20240730(react@19.0.0-rc-3208e73e-20240730))(react@19.0.0-rc-3208e73e-20240730)
@@ -847,6 +850,12 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
+  re-resizable@6.10.0:
+    resolution: {integrity: sha512-hysSK0xmA5nz24HBVztlk4yCqCLCvS32E6ZpWxVKop9x3tqCa4yAj1++facrmkOf62JsJHjmjABdKxXofYioCw==}
+    peerDependencies:
+      react: ^16.13.1 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
+
   react-dom@19.0.0-rc-3208e73e-20240730:
     resolution: {integrity: sha512-jspKji5vQTTlFY7zFGh0VB+rZV+5FweCQkYxtLoPZvc5ZH6vEf1n8d+4h9YqNqF8nnhFkcHO8XLtKTtTyVGSXA==}
     peerDependencies:
@@ -865,6 +874,12 @@ packages:
     resolution: {integrity: sha512-vKpeHhI5OZvYn82kXOs1bC8aOXktGU5AmKAgaZS4F5JPburCtbmDPqE7Pzp+1kN4+Wb81LlF33VpGwWwtXem+w==}
     peerDependencies:
       react: '>= 16.3'
+
+  react-rnd@10.4.13:
+    resolution: {integrity: sha512-Vgbf0iihspcQ6nkaFhpOGWfmnuVbhkhoB0hBbYl8aRDA4horsQHESc4E1z7O/P27kFFjK2aqM0u5CGzfr9gEZA==}
+    peerDependencies:
+      react: '>=16.3.0'
+      react-dom: '>=16.3.0'
 
   react@19.0.0-rc-3208e73e-20240730:
     resolution: {integrity: sha512-4TmFOcgSfwM8w18vXLnEt8tb3ilO9a0GRJA9zQSYjZ5ie6g/zkxagRvZvZbEmhaNgDSF/PKmEdWmfBtlUBcjkA==}
@@ -988,6 +1003,9 @@ packages:
 
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
+
+  tslib@2.6.2:
+    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
 
   tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
@@ -1666,6 +1684,11 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
+  re-resizable@6.10.0(react-dom@19.0.0-rc-3208e73e-20240730(react@19.0.0-rc-3208e73e-20240730))(react@19.0.0-rc-3208e73e-20240730):
+    dependencies:
+      react: 19.0.0-rc-3208e73e-20240730
+      react-dom: 19.0.0-rc-3208e73e-20240730(react@19.0.0-rc-3208e73e-20240730)
+
   react-dom@19.0.0-rc-3208e73e-20240730(react@19.0.0-rc-3208e73e-20240730):
     dependencies:
       react: 19.0.0-rc-3208e73e-20240730
@@ -1687,6 +1710,14 @@ snapshots:
       react-draggable: 4.4.6(react-dom@19.0.0-rc-3208e73e-20240730(react@19.0.0-rc-3208e73e-20240730))(react@19.0.0-rc-3208e73e-20240730)
     transitivePeerDependencies:
       - react-dom
+
+  react-rnd@10.4.13(react-dom@19.0.0-rc-3208e73e-20240730(react@19.0.0-rc-3208e73e-20240730))(react@19.0.0-rc-3208e73e-20240730):
+    dependencies:
+      re-resizable: 6.10.0(react-dom@19.0.0-rc-3208e73e-20240730(react@19.0.0-rc-3208e73e-20240730))(react@19.0.0-rc-3208e73e-20240730)
+      react: 19.0.0-rc-3208e73e-20240730
+      react-dom: 19.0.0-rc-3208e73e-20240730(react@19.0.0-rc-3208e73e-20240730)
+      react-draggable: 4.4.6(react-dom@19.0.0-rc-3208e73e-20240730(react@19.0.0-rc-3208e73e-20240730))(react@19.0.0-rc-3208e73e-20240730)
+      tslib: 2.6.2
 
   react@19.0.0-rc-3208e73e-20240730: {}
 
@@ -1843,6 +1874,8 @@ snapshots:
       is-number: 7.0.0
 
   ts-interface-checker@0.1.13: {}
+
+  tslib@2.6.2: {}
 
   tslib@2.6.3: {}
 
