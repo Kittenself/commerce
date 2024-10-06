@@ -8,7 +8,7 @@
         inset 0 0 0 4px black;
 }
 
-.windowheader {
+.windowHeader { /* Updated class name */
     background-color: lightgrey;
     color: black;
     border-bottom: 1px solid black;
@@ -16,19 +16,19 @@
     height: 20px; 
 }
 
-.selectedwindow .windowheader {
+.selectedWindow .windowHeader { /* Updated class name */
     background-color: rgb(191, 249, 182);
     color: white;
 }
 
-.windowtitle {
+.windowTitle { /* Updated class name */
     padding: 2px;
     line-height: 16px;
     text-align: center;
     cursor: default;
 }
 
-.windowclose {
+.windowClose { /* Updated class name */
     float: left;
     display: inline-block;
     width: 15px;
