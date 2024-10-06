@@ -1,8 +1,8 @@
 import Footer from 'components/layout/footer';
+import WindowContent from 'components/WindowContent';
 import Image from 'next/image';
 import Link from 'next/link';
 import { WindowProvider } from 'windows/windowcontext';
-import Window from 'windows/windows';
 import styles from './Logo.module.css';
 
 export default function HomePage() {
@@ -22,12 +22,7 @@ export default function HomePage() {
       </nav>
 
       <main style={{ minHeight: 'calc(100vh - 100px)' }}>
-        <Window windowId="sampleWindow" title="Sample Window">
-          <div>
-            <p>This is a sample window content.</p>
-            <button onClick={() => alert('Hello!')}>Click Me</button>
-          </div>
-        </Window>
+        <WindowContent />
       </main>
       
       <Footer />
