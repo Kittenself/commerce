@@ -7,8 +7,10 @@ export default function HomePage() {
   return (
     <WindowProvider>
       <Navbar />
-      <main className="bg-cover bg-center" style={{ minHeight: 'calc(100vh - 100px)', backgroundImage: "url('public/pictures/vhm_1725304893.png)" }}>
-        <WindowContent />
+      <main className="flex flex-col min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('/pictures/vhm_1725304893.png')" }}>
+        <div className="flex-grow">
+          <WindowContent />
+        </div>
       </main>
       <Footer />
     </WindowProvider>
