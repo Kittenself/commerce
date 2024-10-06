@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from 'react';
 import { Rnd } from 'react-rnd';
-import styles from 'Windows31.module.css';
+import styles from './Windows31.module.css';
 
 interface WindowProps {
   windowId: string;
