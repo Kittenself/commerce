@@ -14,7 +14,7 @@ export default function HomePage() {
           backgroundSize: 'contain', // Ensure the image is at full resolution
           backgroundRepeat: 'no-repeat', // Prevent the image from repeating
           backgroundPosition: 'center', // Center the image
-          flexGrow: 1 // Allow the main content to grow and push the footer down
+          flex: '1 0 auto' // Allow the main content to grow but not push the footer down
         }}
       >
         <div className="flex-grow">
