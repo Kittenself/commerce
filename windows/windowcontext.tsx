@@ -23,7 +23,10 @@ export const WindowProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const showWindow = (id: string) => {
     setWindowState(prev => ({
       ...prev,
-      [id]: { ...prev[id], isVisible: true },
+      [id]: { 
+        zIndex: prev[id]?.zIndex ?? 0,
+        isVisible: true 
+      },
     }));
     bringToFront(id);
   };
@@ -31,7 +34,10 @@ export const WindowProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const hideWindow = (id: string) => {
     setWindowState(prev => ({
       ...prev,
-      [id]: { ...prev[id], isVisible: false },
+      [id]: { 
+        zIndex: prev[id]?.zIndex ?? 0,
+        isVisible: false 
+      },
     }));
   };
 
@@ -39,7 +45,10 @@ export const WindowProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const highestZIndex = Math.max(...Object.values(windowState).map(w => w.zIndex), 0);
     setWindowState(prev => ({
       ...prev,
-      [id]: { ...prev[id], zIndex: highestZIndex + 1 },
+      [id]: { 
+        zIndex: highestZIndex + 1,
+        isVisible: prev[id]?.isVisible ?? true
+      },
     }));
   };
 
