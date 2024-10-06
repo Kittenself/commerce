@@ -8,27 +8,28 @@
         inset 0 0 0 4px black;
 }
 
-.windowHeader { /* Updated class name */
+.windowHeader {
     background-color: lightgrey;
     color: black;
     border-bottom: 1px solid black;
     font-size: 14px;
     height: 20px; 
+    cursor: move; /* Indicate that this area is draggable */
 }
 
-.selectedWindow .windowHeader { /* Updated class name */
+.selectedWindow .windowHeader {
     background-color: rgb(191, 249, 182);
     color: white;
 }
 
-.windowTitle { /* Updated class name */
+.windowTitle {
     padding: 2px;
     line-height: 16px;
     text-align: center;
     cursor: default;
 }
 
-.windowClose { /* Updated class name */
+.windowClose {
     float: left;
     display: inline-block;
     width: 15px;
@@ -42,7 +43,7 @@
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: black;
     text-shadow: 1px 1px darkgrey;
-    cursor: default;
+    cursor: pointer; /* Change cursor to pointer for better UX */
 }
 
 /* Other component-specific styles follow here */
