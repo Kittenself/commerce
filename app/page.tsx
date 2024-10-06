@@ -1,6 +1,7 @@
 import Footer from 'components/layout/footer';
 import Image from 'next/image';
 import Link from 'next/link';
+import SampleWindow from 'windows/windows';
 import styles from './Logo.module.css';
 
 export default function HomePage() {
@@ -18,7 +19,7 @@ export default function HomePage() {
           />
         </Link>
       </nav>
-      wow
+      <SampleWindow />
       
       <Footer />
     </>

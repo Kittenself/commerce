@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Rnd } from 'react-rnd';
-import styles from '/Windows31.module.css';
+import styles from 'Windows31.module.css';
 
 interface WindowProps {
   windowId: string;
@@ -35,4 +35,15 @@ const Window: React.FC<WindowProps> = ({ windowId, title, children, style }) => 
   );
 };
 
-export default Window;
+const SampleWindow = () => {
+  return (
+    <Window windowId="sampleWindow" title="Sample Window">
+      <div>
+        <p>This is a sample window content.</p>
+        <button onClick={() => alert('Hello!')}>Click Me</button>
+      </div>
+    </Window>
+  );
+};
+
+export default SampleWindow;
