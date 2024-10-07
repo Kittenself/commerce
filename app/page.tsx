@@ -9,7 +9,7 @@ export const metadata = {
   description: 'meow meow meow.',
   openGraph: {
     type: 'website',
-    images: '/pictures/animesher.com_madoka-magica-manga-ascii-699264.gif',
+    images: '/pictures/vhm_1725304893.png',
   }
 };
 
