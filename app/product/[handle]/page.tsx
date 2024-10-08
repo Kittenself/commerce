@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 
 import { GridTileImage } from 'components/grid/tile';
 import Footer from 'components/layout/footer';
+import { Navbar } from 'components/layout/navbar';
 import { Gallery } from 'components/product/gallery';
 import { ProductProvider } from 'components/product/product-context';
 import { ProductDescription } from 'components/product/product-description';
@@ -73,7 +74,8 @@ export default async function ProductPage({ params }: { params: { handle: string
   };
 
   return (
-    <ProductProvider>
+    <ProductProvider> 
+      <Navbar/>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
