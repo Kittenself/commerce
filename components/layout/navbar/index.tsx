@@ -1,30 +1,16 @@
-"use client"; // Marking this file as a Client Component
-
 import CartModal from 'components/cart/modal';
 import { ClientTextCarousel } from 'components/client-text-carousel';
 import { getMenu } from 'lib/shopify';
 import { Menu } from 'lib/shopify/types';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation'; // Import usePathname
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense } from 'react';
 import MobileMenu from './mobile-menu';
 import { SearchSkeleton } from './search';
 
 const { SITE_NAME } = process.env;
 
-export function Navbar() { // Removed async since it's not needed for a Client Component
-  const pathname = usePathname(); // Get the current pathname
-  const currentPageName = pathname.split('/').pop() || ''; // Extract the current page name
-
-  const [menu, setMenu] = useState<Menu[]>([]); // State to hold menu data
-
-  useEffect(() => {
-    const fetchMenu = async () => {
-      const fetchedMenu = await getMenu('next-js-frontend-header-menu');
-      setMenu(fetchedMenu); // Update state with fetched menu
-    };
-    fetchMenu(); // Call the fetch function
-  }, []); // Empty dependency array to run once on mount
+export async function Navbar() {
+  const menu = await getMenu('next-js-frontend-header-menu');
 
   return (
     <nav className="relative flex flex-col items-center justify-between p-4 lg:px-6">
@@ -42,7 +28,7 @@ export function Navbar() { // Removed async since it's not needed for a Client C
               className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
             >
               <div className="ml-2 flex-none text-lg font-extrabold uppercase md:hidden lg:block">
-                {`${SITE_NAME}/${currentPageName}`} {/* Updated to include current page name */}
+                {SITE_NAME}
               </div>
             </Link>
             {menu.length ? (
