@@ -74,6 +74,7 @@ export default async function ProductPage({ params }: { params: { handle: string
   return (
     <ProductProvider> 
       <Navbar/>
+      <div className="mt-4" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -106,6 +107,7 @@ export default async function ProductPage({ params }: { params: { handle: string
         
       </div>
       <Footer />
+      <div className="mt-4" />
     </ProductProvider>
   );
 }
