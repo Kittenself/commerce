@@ -3,7 +3,7 @@ import { ClientTextCarousel } from 'components/client-text-carousel';
 import { getMenu } from 'lib/shopify';
 import { Menu } from 'lib/shopify/types';
 import Link from 'next/link';
-import { useRouter } from 'next/router'; // Import useRouter
+import { usePathname } from 'next/navigation'; // Import usePathname
 import { Suspense } from 'react';
 import MobileMenu from './mobile-menu';
 import { SearchSkeleton } from './search';
@@ -11,8 +11,8 @@ import { SearchSkeleton } from './search';
 const { SITE_NAME } = process.env;
 
 export async function Navbar() {
-  const router = useRouter(); // Get the router instance
-  const currentPageName = router.pathname.split('/').pop() || ''; // Extract the current page name
+  const pathname = usePathname(); // Get the current pathname
+  const currentPageName = pathname.split('/').pop() || ''; // Extract the current page name
 
   const menu = await getMenu('next-js-frontend-header-menu');
 
