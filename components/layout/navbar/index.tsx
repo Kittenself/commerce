@@ -4,7 +4,6 @@ import { getMenu } from 'lib/shopify';
 import { Menu } from 'lib/shopify/types';
 import Link from 'next/link';
 import { Suspense } from 'react';
-import MobileMenu from './mobile-menu';
 import { SearchSkeleton } from './search';
 
 const { SITE_NAME } = process.env;
@@ -17,7 +16,7 @@ export async function Navbar() {
       <div className="flex w-full items-center">
         <div className="block flex-none md:hidden">
           <Suspense fallback={null}>
-            <MobileMenu menu={menu} />
+            
           </Suspense>
         </div>
         <div className="flex w-full items-center">
