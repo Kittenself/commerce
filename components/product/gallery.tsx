@@ -46,8 +46,8 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
             <Image
               fill
               sizes="100vw"
-              alt={images[zoomedIndex].altText}
-              src={images[zoomedIndex].src}
+              alt={images[zoomedIndex]?.altText || ''}
+              src={images[zoomedIndex]?.src || ''}
               className="object-contain"
             />
           </div>
