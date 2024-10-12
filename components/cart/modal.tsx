@@ -74,7 +74,7 @@ export default function CartModal() {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-neutral-200 bg-white/80 p-6 text-black backdrop-blur-xl md:w-[390px] white:border-neutral-700 white:bg-black/80 dark:text-grey">
+            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-neutral-200 bg-white p-6 text-black  md:w-[390px] white:border-neutral-700 white:bg-black/80 dark:text-grey">
               <div className="flex items-center justify-between">
                 <p className="text-lg font-semibold" style={{ textDecoration: 'underline' }}>Awesome shopping cart</p>
                 <button aria-label="Close cart" onClick={closeCart}>

@@ -19,15 +19,15 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
         {images.map((image, index) => (
           <div 
             key={image.src} 
-            className="aspect-square relative group cursor-zoom-in"
+            className={`relative group cursor-zoom-in ${images.length === 1 ? 'max-w-2xl mx-auto' : 'aspect-square'}`}
             onClick={() => setZoomedIndex(index)}
           >
             <Image
-              fill
-              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-              alt={image.altText}
               src={image.src}
-              className="object-cover transition-transform duration-300 group-hover:scale-110"
+              alt={image.altText}
+              width={1000}
+              height={1000}
+              className={`object-cover w-full h-full ${images.length > 1 ? 'aspect-square' : 'aspect-auto'}`}
               priority={index === 0}
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
