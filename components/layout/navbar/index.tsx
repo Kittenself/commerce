@@ -4,7 +4,7 @@ import { getMenu } from 'lib/shopify';
 import { Menu } from 'lib/shopify/types';
 import Link from 'next/link';
 import { Suspense } from 'react';
-
+import { SearchSkeleton } from './search';
 
 const { SITE_NAME } = process.env;
 
@@ -47,7 +47,9 @@ export async function Navbar() {
             ) : null}
           </div>
           <div className="hidden justify-center md:flex md:w-1/3">
-
+            <Suspense fallback={<SearchSkeleton />}>
+              {/* Your search component here */}
+            </Suspense>
           </div>
           <div className="flex justify-end md:w-1/3">
             <div className="bg-white text-black px-3 py-1 ">
