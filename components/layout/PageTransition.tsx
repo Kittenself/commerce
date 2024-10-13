@@ -22,7 +22,7 @@ const pageTransition = {
   duration: 0.5,
 };
 
-const PageTransition = ({ children }) => {
+const PageTransition = ({ children }: { children: React.ReactNode }) => {
   const { asPath } = useRouter();
 
   return (
