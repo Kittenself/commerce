@@ -118,7 +118,7 @@ export default function CartModal() {
                                 <DeleteItemButton item={item} optimisticUpdate={updateCartItem} />
                               </div>
                               <div className="flex flex-row">
-                                <div className="relative h-16 w-16 overflow-hidden rounded-md border border-neutral-300 bg-neutral-300 dark:border-neutral-700 white:bg-neutral-900 white:hover:bg-neutral-800">
+                                <div className="relative h-16 w-16 overflow-hidden  border-neutral-300  dark:border-neutral-700 white:bg-neutral-900 white:hover:bg-neutral-800">
                                   <Image
                                     className="h-full w-full object-cover"
                                     width={64}
@@ -153,7 +153,7 @@ export default function CartModal() {
                                   amount={item.cost.totalAmount.amount}
                                   currencyCode={item.cost.totalAmount.currencyCode}
                                 />
-                                <div className="ml-auto flex h-9 flex-row items-center rounded-full border border-neutral-200 dark:border-neutral-700">
+                                <div className="ml-auto flex h-9 flex-row items-center border border-neutral-200 dark:border-neutral-700">
                                   <EditItemQuantityButton
                                     item={item}
                                     type="minus"

@@ -7,7 +7,7 @@ export default async function Footer() {
   const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : '');
   const skeleton = 'w-full h-6 animate-pulse rounded bg-neutral-200 dark:bg-neutral-700';
   const menu = await getMenu('next-js-frontend-footer-menu');
-  const copyrightName = COMPANY_NAME || SITE_NAME || '';
+  const copyrightName = 'modamosaic' || SITE_NAME || '';
 
   return (
     <footer className="text-sm text-neutral-500 dark:text-neutral-400">
@@ -19,7 +19,7 @@ export default async function Footer() {
           </p>
           <hr className="mx-4 hidden h-4 w-[1px] border-l border-neutral-400 md:inline-block" />
           <p>
-            <a href="modamosa">twitter</a>
+            <a href="modamosaic">twitter</a>
           </p>
           <p className="md:ml-auto">
         

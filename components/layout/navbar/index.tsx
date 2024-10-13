@@ -26,8 +26,8 @@ export async function Navbar() {
               prefetch={true}
               className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
             >
-              <div className="ml-2 flex-none text-lg font-extrabold uppercase md:hidden lg:block">
-                {SITE_NAME}
+              <div className="ml-2 flex-none text-lg font-extrabold uppercase md:hidden lg:block bg-white text-black px-3 py-1 ">
+                MODAMOSAIC
               </div>
             </Link>
             {menu.length ? (
@@ -52,7 +52,9 @@ export async function Navbar() {
             </Suspense>
           </div>
           <div className="flex justify-end md:w-1/3">
-            <CartModal />
+            <div className="bg-white text-black px-3 py-1 ">
+              <CartModal />
+            </div>
           </div>
         </div>
       </div>
