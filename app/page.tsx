@@ -10,11 +10,11 @@ export default function Home() {
         </div>
         
         <div className="mb-8 sm:mb-16">
-          <h2 className={`${DisposableDroidBB.className} mb-4 sm:mb-8 text-4xl sm:text-8xl text-white bg-blue-600 inline-block px-2 py-1 sm:px-4 sm:py-2 font-bold`}>
+          <h2 className={`${DisposableDroidBB.className} mb-4 sm:mb-8 text-4xl sm:text-8xl text-white bg-blue-600 inline-block px-1 py-2 sm:px-4 sm:py-2 font-bold`}>
             windowscigarettesgifs x
           </h2>
           <br />
-          <h2 className={`font-bold mb-4 sm:mb-8 text-4xl sm:text-8xl text-white bg-blue-600 inline-block px-2 py-1 sm:px-4 sm:py-2`}>
+          <h2 className={`font-bold mb-4 sm:mb-8 text-4xl sm:text-8xl text-white bg-blue-600 inline-block px-1 py-1 sm:px-4 sm:py-2`}>
             MODMOSAIC
           </h2>
           <p className="font-italic text-xl sm:text-3xl mb-4 sm:mb-8">10/12/2024</p>
