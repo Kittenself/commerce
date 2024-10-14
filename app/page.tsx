@@ -34,7 +34,7 @@ export default function Home() {
   };
 
   return (
-    <div className="h-screen bg-white-300 p-4 sm:p-8 flex items-center justify-center">
+    <div className="h-screen bg-white-300 p-4 sm:p-3 flex items-center justify-center">
       <motion.main
         className="border-black border-4 sm:border-8 p-4 sm:p-8 w-full h-full max-h-[calc(100vh-4rem)] flex flex-col justify-between"
         variants={containerVariants}
@@ -77,7 +77,7 @@ export default function Home() {
           </motion.div>
         </motion.div>
         
-        <motion.div className="mt-6 sm:mt-8 flex-grow-0 flex flex-col justify-end" variants={itemVariants}>
+        <motion.div className="mt-5 sm:mt-5 flex-grow-0 flex flex-col justify-end" variants={itemVariants}>
           <motion.hr className="border-t-2 sm:border-t-4 border-black mb-6 sm:mb-8" variants={itemVariants} />
           
           <motion.div className="text-2xl sm:text-3xl lg:text-4xl font-bold space-y-3 sm:space-y-4" variants={itemVariants}>
