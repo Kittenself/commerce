@@ -27,7 +27,7 @@ export default async function ShopPage() {
       <Navbar />
       <main className="mx-auto max-w-screen-2xl px-4 py-8 mt-16">
         <h1 className="mb-8 text-5xl font-italic text-white bg-blue-600 inline-block px-4 py-2">
-          CIGARETTE SHOP WINDOWS AESTHETIC SHOP CAN LITERALY BE ANYTHING
+          baseball's super duper shop
         </h1>
         <h2 className="mb-8 text-2xl font-italic text-white bg-yellow-300 inline-block px-4 py-2">
           discription about the collection or a message from the artist or anything u can put anything legit
