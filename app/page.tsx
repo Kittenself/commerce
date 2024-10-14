@@ -45,13 +45,13 @@ export default function Home() {
           </motion.div>
           
           <motion.div className="flex-grow flex flex-col justify-center" variants={itemVariants}>
-            <motion.h2 className="mb-2 sm:mb-2 text-5xl sm:text-8xl lg:text-7xl font-italic  font-bold text-white bg-blue-600 px-2 py-1 sm:px-8 sm:py-6" variants={itemVariants}>
+            <motion.h2 className="mb-2 sm:mb-2 text-5xl sm:text-8xl lg:text-7xl font-italic font-bold text-white bg-blue-600 px-2 py-1 sm:px-8 sm:py-6 relative before:absolute before:content-[''] before:bg-black before:top-2 before:left-2 before:right-[-8px] before:bottom-[-8px] before:-z-10 before:rotate-2" variants={itemVariants}>
               <AnimatedText text="windowscigs" />
             </motion.h2>
-            <motion.h2 className="mb-2 sm:mb-2 text-5xl sm:text-8xl lg:text-6xl font-italic text-white bg-blue-600 px-2 py-1 sm:px-9 sm:py-6" variants={itemVariants}>
+            <motion.h2 className="mb-2 sm:mb-2 text-5xl sm:text-8xl lg:text-6xl font-italic text-white bg-blue-600 px-2 py-1 sm:px-9 sm:py-6 relative before:absolute before:content-[''] before:bg-black before:top-2 before:left-2 before:right-[-8px] before:bottom-[-8px] before:-z-10 before:rotate-2" variants={itemVariants}>
               <AnimatedText text="x" />
             </motion.h2>
-            <motion.h2 className="mb-3 sm:mb-6 text-5xl sm:text-6xl lg:text-7xl font-italic font-bold text-white bg-blue-600 px-2 py-1 sm:px-9 sm:py-6" variants={itemVariants}>
+            <motion.h2 className="mb-3 sm:mb-6 text-5xl sm:text-6xl lg:text-7xl font-italic font-bold text-white bg-blue-600 px-2 py-1 sm:px-9 sm:py-6 relative before:absolute before:content-[''] before:bg-black before:top-2 before:left-2 before:right-[-8px] before:bottom-[-8px] before:-z-10 before:rotate-2" variants={itemVariants}>
               <AnimatedText text="MODAMOSAIC" />
             </motion.h2>
             <motion.p className="text-xl sm:text-2xl lg:text-3xl mb-4 sm:mb-6 font-bold bg-green-300" variants={itemVariants}>
