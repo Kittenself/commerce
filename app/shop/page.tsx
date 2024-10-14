@@ -30,7 +30,7 @@ export default async function ShopPage() {
           baseball's super duper shop
         </h1>
         <h2 className="mb-8 text-2xl font-italic text-white bg-yellow-300 inline-block px-4 py-2">
-          discription about the collection or a message from the artist or anything u can put anything legit
+        i like windows and lily chou chou and lil b
         </h2>
         <div className="space-y-8">
           {products.map((product, index) => 
