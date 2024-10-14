@@ -9,7 +9,7 @@ import { SearchSkeleton } from './search';
 
 const { SITE_NAME } = process.env;
 
-export async function Navbar() {
+export async function Navbar2() {
   const menu = await getMenu('next-js-frontend-header-menu');
 
   const outlineStyle = {
@@ -36,7 +36,7 @@ export async function Navbar() {
               className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
             >
               <div className="ml-2 flex-none text-lg font-extrabold uppercase md:hidden lg:block text-black px-3 py-1" style={outlineStyle}>
-                <AnimatedText text="MODAMOSAIC/collection/baseball" />
+                <AnimatedText text="MODAMOSAIC" />
               </div>
             </Link>
             {menu.length ? (
