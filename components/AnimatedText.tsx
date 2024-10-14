@@ -47,7 +47,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className }) => {
         if (animationRef.current) {
           cancelAnimationFrame(animationRef.current);
         }
-      }, 2000); // Run initial animation for 20 seconds
+      }, 1500); // animation duration
 
       return () => {
         clearTimeout(timer);
