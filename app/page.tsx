@@ -1,8 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import localFont from 'next/font/local';
 import Link from 'next/link';
 import { AnimatedText } from '../components/AnimatedText';
+
+// Import the custom font
+const jacquardFont = localFont({ src: '../fonts/Jacquard12-Regular.ttf' });
 
 export default function Home() {
   const containerVariants = {
@@ -45,8 +49,11 @@ export default function Home() {
           </motion.div>
           
           <motion.div className="flex-grow flex flex-col justify-center" variants={itemVariants}>
-            <motion.h2 className="mb-2 sm:mb-2 text-5xl sm:text-8xl lg:text-7xl font-italic font-bold text-white bg-blue-600 px-2 py-1 sm:px-8 sm:py-6 relative before:absolute before:content-[''] before:bg-black before:top-2 before:left-2 before:right-[-8px] before:bottom-[-8px] before:-z-10 before:rotate-2" variants={itemVariants}>
-              <AnimatedText text="windowscigs" />
+            <motion.h2 
+              className={`mb-2 sm:mb-2 text-5xl sm:text-8xl lg:text-8xl font-italic  text-white bg-blue-600 px-2 py-1 sm:px-8 sm:py-6 relative before:absolute before:content-[''] before:bg-black before:top-2 before:left-2 before:right-[-8px] before:bottom-[-8px] before:-z-10 before:rotate-2 ${jacquardFont.className}`} 
+              variants={itemVariants}
+            >
+              <AnimatedText text="Windows Cigs" />
             </motion.h2>
             <motion.h2 className="mb-2 sm:mb-2 text-5xl sm:text-8xl lg:text-6xl font-italic text-white bg-blue-600 px-2 py-1 sm:px-9 sm:py-6 relative before:absolute before:content-[''] before:bg-black before:top-2 before:left-2 before:right-[-8px] before:bottom-[-8px] before:-z-10 before:rotate-2" variants={itemVariants}>
               <AnimatedText text="x" />

@@ -4,12 +4,21 @@ import { getMenu } from 'lib/shopify';
 import { Menu } from 'lib/shopify/types';
 import Link from 'next/link';
 import { Suspense } from 'react';
+import { AnimatedText } from '../../AnimatedText';
 import { SearchSkeleton } from './search';
 
 const { SITE_NAME } = process.env;
 
 export async function Navbar() {
   const menu = await getMenu('next-js-frontend-header-menu');
+
+  const outlineStyle = {
+    textShadow: `-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff`,
+  };
+
+  const cartOutlineStyle = {
+    textShadow: `-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff`,
+  };
 
   return (
     <nav className="relative flex flex-col items-center justify-between p-4 lg:px-6">
@@ -26,8 +35,8 @@ export async function Navbar() {
               prefetch={true}
               className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
             >
-              <div className="ml-2 flex-none text-lg font-extrabold uppercase md:hidden lg:block bg-white text-black px-3 py-1 ">
-                MODAMOSAIC
+              <div className="ml-2 flex-none text-lg font-extrabold uppercase md:hidden lg:block text-black px-3 py-1" style={outlineStyle}>
+                <AnimatedText text="MODAMOSAIC" />
               </div>
             </Link>
             {menu.length ? (
@@ -52,7 +61,7 @@ export async function Navbar() {
             </Suspense>
           </div>
           <div className="flex justify-end md:w-1/3">
-            <div className="bg-white text-black px-3 py-1 ">
+            <div className="text-black px-3 py-1" style={cartOutlineStyle}>
               <CartModal />
             </div>
           </div>
