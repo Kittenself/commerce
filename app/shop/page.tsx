@@ -25,7 +25,7 @@ export default async function ShopPage() {
   return (
     <div className="min-h-screen bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/pictures/idkyete.png')" }}>
       <Navbar />
-      <main className="mx-auto max-w-screen-2xl px-4 py-8">
+      <main className="mx-auto max-w-screen-2xl px-4 py-8 mt-16">
         <h1 className="mb-8 text-5xl font-italic text-white bg-blue-600 inline-block px-4 py-2">
           CIGARETTE SHOP WINDOWS AESTHETIC SHOP CAN LITERALY BE ANYTHING
         </h1>

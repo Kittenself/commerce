@@ -9,8 +9,15 @@
 }
 body {
   font-family: 'Publico Text Mono', monospace;
+  cursor: url('public/pictures/tumblr_mj7qs6yQ7u1s6mbrfo1_500.gif'), auto !important;
 }
 
+/* Fallback for browsers that don't support GIF cursors */
+@supports not (cursor: url('public/pictures/tumblr_mj7qs6yQ7u1s6mbrfo1_500.gif'), auto) {
+  body {
+    cursor: pointer; /* or any other appropriate fallback */
+  }
+}
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {
   img[loading='lazy'] {
     clip-path: inset(0.6px);
