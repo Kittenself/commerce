@@ -43,31 +43,36 @@ export default function Home() {
       >
         <motion.div className="flex flex-col justify-between flex-grow" variants={itemVariants}>
           <motion.div variants={itemVariants}>
-            <h1 className="text-3xl sm:text-5xl lg:text-4xl font-bold mb-4 sm:mb-6">
+            <h1 className="text-4xl sm:text-6xl lg:text-5xl font-bold mb-6 sm:mb-8">
               <AnimatedText text="MODAMOSAIC" />
             </h1>
           </motion.div>
           
-          <motion.div className="flex-grow flex flex-col justify-center space-y-4 sm:space-y-6" variants={itemVariants}>
+          <motion.div className="flex-grow flex flex-col justify-center space-y-6 sm:space-y-8" variants={itemVariants}>
+            <motion.div variants={itemVariants}>
+              <Link href="/explore" className="inline-block group">
+                <span className={`bg-black text-white px-6 sm:px-8 py-3 sm:py-4 text-2xl sm:text-5xl lg:text-4xl transition-all duration-100 ease-in-out transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:filter group-hover:drop-shadow-[7px_7px_0_rgba(0,0,0,1)] active:translate-y-0 active:translate-x-0 active:filter-none ${jacquardFont.className}`}>
+                  <AnimatedText text='Explore →' />
+                </span>
+              </Link>
+            </motion.div>
             <motion.h2 
-              className={`text-5xl sm:text-8xl lg:text-7xl font-italic text-white bg-blue-600 px-2 py-1 sm:px-4 sm:py-2 ${jacquardFont.className}`} 
+              className={`text-5xl sm:text-9xl lg:text-8xl font-italic text-white bg-blue-600 px-4 py-2 sm:px-6 sm:py-3 ${jacquardFont.className}`} 
               variants={itemVariants}
             >
-              <AnimatedText text="BASED GOD" />
+              <AnimatedText text="BASEBALL" />
             </motion.h2>
-            <motion.h2 className="text-5xl sm:text-8xl lg:text-7xl font-italic text-white bg-blue-600 px-2 py-1 sm:px-4 sm:py-2" variants={itemVariants}>
-              <AnimatedText text="X" />
-            </motion.h2>
-            <motion.h2 className="text-5xl sm:text-8xl lg:text-7xl font-italic font-bold text-white bg-blue-600 px-2 py-1 sm:px-4 sm:py-2" variants={itemVariants}>
+
+            <motion.h2 className="text-5xl sm:text-9xl lg:text-8xl font-italic font-bold text-white bg-blue-600 px-4 py-2 sm:px-6 sm:py-3" variants={itemVariants}>
               <AnimatedText text="MODAMOSAIC" />
             </motion.h2>
 
-            <motion.p className="text-xl sm:text-2xl lg:text-3xl px-2 py-1 sm:px-4 sm:py-2" variants={itemVariants}>
-              <AnimatedText text="10/13/2024" />
+            <motion.p className="text-1xl sm:text-2xl lg:text-3xl px-4 py-2 sm:px-6 sm:py-3" variants={itemVariants}>
+              <AnimatedText text="last-updated:10/13/2024" />
             </motion.p>
             <motion.div variants={itemVariants}>
               <Link href="/shop" className="inline-block group">
-                <span className={`bg-black text-white px-4 sm:px-6 py-2 sm:py-3 text-xl sm:text-4xl lg:text-3xl transition-all duration-100 ease-in-out transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:filter group-hover:drop-shadow-[7px_7px_0_rgba(0,0,0,1)] active:translate-y-0 active:translate-x-0 active:filter-none ${jacquardFont.className}`}>
+                <span className={`bg-black text-white px-6 sm:px-8 py-3 sm:py-4 text-2xl sm:text-5xl lg:text-4xl transition-all duration-100 ease-in-out transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:filter group-hover:drop-shadow-[7px_7px_0_rgba(0,0,0,1)] active:translate-y-0 active:translate-x-0 active:filter-none ${jacquardFont.className}`}>
                   <AnimatedText text='Shop Now →' />
                 </span>
               </Link>
@@ -79,14 +84,7 @@ export default function Home() {
           <motion.hr className="border-t-2 sm:border-t-4 border-black mb-6 sm:mb-8" variants={itemVariants} />
           
           <motion.div className="text-2xl sm:text-3xl lg:text-4xl font-bold space-y-3 sm:space-y-4" variants={itemVariants}>
-            <motion.div variants={itemVariants}>
-              <Link href="/explore" className="block w-fit">
-                <span className="relative group">
-                  <AnimatedText text="EXPLORE" />
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 sm:h-1 bg-black transition-all duration-300 group-hover:w-full"></span>
-                </span>
-              </Link>
-            </motion.div>
+         
             <motion.div variants={itemVariants}>
               <Link href="/socials" className="block w-fit">
                 <span className="relative group">

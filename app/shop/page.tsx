@@ -23,7 +23,7 @@ export default async function ShopPage() {
   const products = await Promise.all(productPromises);
 
   return (
-    <div className="min-h-screen bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/pictures/idkyete.png')" }}>
+    <div className="min-h-screen bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/pictures/download (7).png')" }}>
       <Navbar />
       <main className="mx-auto max-w-screen-2xl px-4 py-8 mt-16">
         <h1 className="mb-8 text-5xl font-italic text-white bg-blue-600 inline-block px-4 py-2">
