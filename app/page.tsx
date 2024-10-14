@@ -48,29 +48,27 @@ export default function Home() {
             </h1>
           </motion.div>
           
-          <motion.div className="flex-grow flex flex-col justify-center" variants={itemVariants}>
+          <motion.div className="flex-grow flex flex-col justify-center space-y-4 sm:space-y-6" variants={itemVariants}>
             <motion.h2 
-              className={`mb-2 sm:mb-2 text-5xl sm:text-8xl lg:text-8xl font-italic  text-white bg-blue-600 px-2 py-1 sm:px-4 sm:py-4 relative before:absolute before:content-[''] before:bg-black before:top-2 before:left-2 before:right-[-8px] before:bottom-[-8px] before:-z-10 before:rotate-2 ${jacquardFont.className}`} 
+              className={`text-5xl sm:text-8xl lg:text-7xl font-italic text-white bg-blue-600 px-2 py-1 sm:px-4 sm:py-2 ${jacquardFont.className}`} 
               variants={itemVariants}
             >
-              <AnimatedText text="Windows Cigs" />
+              <AnimatedText text="BASED GOD" />
             </motion.h2>
-            <motion.h2 className="mb-2 sm:mb-2 text-5xl sm:text-8xl lg:text-6xl font-italic text-white bg-blue-600 px-2 py-1 sm:px-10 sm:py-6 relative before:absolute before:content-[''] before:bg-black before:top-2 before:left-2 before:right-[-8px] before:bottom-[-8px] before:-z-10 before:rotate-2" variants={itemVariants}>
-              <AnimatedText text="x" />
+            <motion.h2 className="text-5xl sm:text-8xl lg:text-7xl font-italic text-white bg-blue-600 px-2 py-1 sm:px-4 sm:py-2" variants={itemVariants}>
+              <AnimatedText text="X" />
             </motion.h2>
-            <motion.h2 className="mb-3 sm:mb-6 text-5xl sm:text-6xl lg:text-7xl font-italic font-bold text-white bg-blue-600 px-2 py-1 sm:px-9 sm:py-6 relative before:absolute before:content-[''] before:bg-black before:top-2 before:left-2 before:right-[-8px] before:bottom-[-8px] before:-z-10 before:rotate-2" variants={itemVariants}>
+            <motion.h2 className="text-5xl sm:text-8xl lg:text-7xl font-italic font-bold text-white bg-blue-600 px-2 py-1 sm:px-4 sm:py-2" variants={itemVariants}>
               <AnimatedText text="MODAMOSAIC" />
             </motion.h2>
-            <motion.p className="text-xl sm:text-2xl lg:text-3xl mb-4 sm:mb-6 font-bold bg-green-300" variants={itemVariants}>
-              <AnimatedText text="LATEST RELEASE!!!!!!!" />
-            </motion.p>
-            <motion.p className="text-xl sm:text-2xl lg:text-3xl mb-4 sm:mb-6 px-4" variants={itemVariants}>
+
+            <motion.p className="text-xl sm:text-2xl lg:text-3xl px-2 py-1 sm:px-4 sm:py-2" variants={itemVariants}>
               <AnimatedText text="10/13/2024" />
             </motion.p>
             <motion.div variants={itemVariants}>
               <Link href="/shop" className="inline-block group">
-                <span className="bg-black text-white px-4 sm:px-6 py-2 sm:py-3 text-xl sm:text-2xl lg:text-3xl font-bold transition-all duration-100 ease-in-out transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:filter group-hover:drop-shadow-[7px_7px_0_rgba(0,0,0,1)] active:translate-y-0 active:translate-x-0 active:filter-none">
-                  <AnimatedText text='SHOP NOW →' />
+                <span className={`bg-black text-white px-4 sm:px-6 py-2 sm:py-3 text-xl sm:text-4xl lg:text-3xl transition-all duration-100 ease-in-out transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:filter group-hover:drop-shadow-[7px_7px_0_rgba(0,0,0,1)] active:translate-y-0 active:translate-x-0 active:filter-none ${jacquardFont.className}`}>
+                  <AnimatedText text='Shop Now →' />
                 </span>
               </Link>
             </motion.div>

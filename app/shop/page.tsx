@@ -11,11 +11,11 @@ export const metadata = {
 
 // Hardcoded product handles or names
 const FEATURED_PRODUCT_HANDLES = [
-  'more-cigs',
-  'wumpus3',
-  'more-cigs',
-  'wumpus3',
-  'more-cigs'
+  'based-god',
+  'based-god',
+  'based-god',
+  'based-god',
+  'based-god'
 ];
 
 export default async function ShopPage() {
