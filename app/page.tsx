@@ -76,7 +76,7 @@ export default function Home() {
                   Shop Now →
                 </span>
               </Link>
-              <Link href="/shopall" className="inline-block group">
+              <Link href="/all" className="inline-block group">
                 <span className={`bg-black text-white px-6 sm:px-8 py-3 sm:py-4 text-2xl sm:text-5xl lg:text-4xl transition-all duration-100 ease-in-out transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:filter group-hover:drop-shadow-[7px_7px_0_rgba(0,0,0,1)] active:translate-y-0 active:translate-x-0 active:filter-none ${jacquardFont.className}`}>
                   Shop All →
                 </span>

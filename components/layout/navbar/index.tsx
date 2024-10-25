@@ -36,7 +36,7 @@ export async function Navbar() {
               className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
             >
               <div className="ml-2 flex-none text-lg font-extrabold uppercase md:hidden lg:block text-black px-3 py-1" style={outlineStyle}>
-                <AnimatedText text="MODA/collection/baseball" />
+                <AnimatedText text="MODAMOSAIC/collection/baseball" />
               </div>
             </Link>
             {menu.length ? (

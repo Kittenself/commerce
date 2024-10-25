@@ -1,7 +1,5 @@
-
-
 "use client";
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Rnd } from 'react-rnd';
 import styles from './Windows31.module.css';
 import { useWindowContext } from './windowcontext';
@@ -23,9 +21,11 @@ const Window: React.FC<WindowProps> = ({
   startPosition = { x: 100, y: 100 },
   startSize = { width: 500, height: 'auto' }
 }) => {
-  const rndRef = useRef(null);
+  const rndRef = useRef<Rnd>(null);
   const { windowState, bringToFront, hideWindow } = useWindowContext();
   const [isMobile, setIsMobile] = useState(false);
+  const [position, setPosition] = useState(startPosition);
+  const [size, setSize] = useState(startSize);
 
   useEffect(() => {
     if (!windowState[windowId]) {
@@ -41,18 +41,24 @@ const Window: React.FC<WindowProps> = ({
     return () => window.removeEventListener('resize', checkMobile);
   }, [windowId, bringToFront, windowState]);
 
-  const handleMouseDown = () => {
+  const handleMouseDown = useCallback(() => {
     bringToFront(windowId);
-  };
+  }, [bringToFront, windowId]);
 
-  const handleCloseClick = (event: React.MouseEvent) => {
+  const handleDragStop = useCallback((_e, d) => {
+    setPosition({ x: d.x, y: d.y });
+    bringToFront(windowId);
+  }, [bringToFront, windowId]);
+
+  const handleResize = useCallback((_e, _direction, ref, _delta, position) => {
+    setSize({ width: ref.style.width, height: ref.style.height });
+    setPosition(position);
+  }, []);
+
+  const handleCloseClick = useCallback((event: React.MouseEvent) => {
     event.stopPropagation();
     hideWindow(windowId);
-  };
-
-  if (!windowState[windowId]?.isVisible) {
-    return null;
-  }
+  }, [hideWindow, windowId]);
 
   return (
     <Rnd
@@ -63,15 +69,19 @@ const Window: React.FC<WindowProps> = ({
         width: startSize.width,
         height: startSize.height,
       }}
+      position={position}
+      size={size}
       bounds="parent"
       dragHandleClassName={styles.windowHeader}
       className={`window ${styles.window} ${windowState[windowId]?.zIndex === Math.max(...Object.values(windowState).map(w => w.zIndex)) ? styles.selectedWindow : ''}`}
       style={{ 
         zIndex: windowState[windowId]?.zIndex || 1, 
         ...style,
-        ...(isMobile ? { width: '100%', height: '100%', position: 'fixed', top: 0, left: 0 } : {})
+        visibility: windowState[windowId]?.isVisible ? 'visible' : 'hidden',
       }}
       onMouseDown={handleMouseDown}
+      onDragStop={handleDragStop}
+      onResize={handleResize}
       disableDragging={isMobile}
       enableResizing={!isMobile}
     >
@@ -79,7 +89,9 @@ const Window: React.FC<WindowProps> = ({
         <div className={styles.windowClose} onDoubleClick={handleCloseClick}></div>
         <div className={styles.windowTitle}>{title}</div>
       </div>
-      <div className={styles.windowInner}>{children}</div>
+      <div className={styles.windowContent} style={{ height: 'calc(100% - 24px)', overflow: 'auto' }}>
+        {children}
+      </div>
     </Rnd>
   );
 };
