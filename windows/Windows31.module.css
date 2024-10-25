@@ -9,8 +9,6 @@
         inset 2px 2px #fff;
     position: relative;
     margin-bottom: 16px;
-    backdrop-filter: blur(5px);
-    background-color: rgba(192, 192, 192, 0.8);
 }
 
 .windowHeader {
@@ -50,19 +48,9 @@
     background-color: #fff;
     padding: 8px;
     border: 1px solid #808080;
+    height: calc(100% - 24px);
     overflow: auto;
-    width: 100%;
-    height: calc(100% - 24px); /* Adjust based on your header height */
 }
-
-/* Adjust ProductDisplay styles if necessary */
-.windowContent :global(.product-display) {
-    border: none;
-    background: none;
-    padding: 0;
-}
-
-/* Other component-specific styles follow here */
 
 .windowBlueHighlight {
     box-shadow:
@@ -74,14 +62,32 @@
         0 0 0 4px #1084d0;
 }
 
-/* Add these styles at the end of the file */
+@media (max-width: 768px) {
+  .window {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 20px;
+    transform: none !important;
+  }
 
-.desktopBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #008080; /* Classic Windows 95 teal background */
-  z-index: -1;
+  .windowHeader {
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .windowClose {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 18px;
+  }
+
+  .windowContent {
+    height: auto;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
 }

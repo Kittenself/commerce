@@ -1,6 +1,6 @@
 "use client";
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Rnd, RndDragCallback, RndResizeCallback } from 'react-rnd';
+import React, { useCallback, useEffect, useRef } from 'react';
+import { Rnd } from 'react-rnd';
 import styles from './Windows31.module.css';
 import { useWindowContext } from './windowcontext';
 
@@ -23,37 +23,16 @@ const Window: React.FC<WindowProps> = ({
 }) => {
   const rndRef = useRef<Rnd>(null);
   const { windowState, bringToFront, hideWindow } = useWindowContext();
-  const [isMobile, setIsMobile] = useState(false);
-  const [position, setPosition] = useState(startPosition);
-  const [size, setSize] = useState(startSize);
 
   useEffect(() => {
     if (!windowState[windowId]) {
       bringToFront(windowId);
     }
-
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
   }, [windowId, bringToFront, windowState]);
 
   const handleMouseDown = useCallback(() => {
     bringToFront(windowId);
   }, [bringToFront, windowId]);
-
-  const handleDragStop: RndDragCallback = useCallback((_e, d) => {
-    setPosition({ x: d.x, y: d.y });
-    bringToFront(windowId);
-  }, [bringToFront, windowId]);
-
-  const handleResize: RndResizeCallback = useCallback((_e, _direction, ref, _delta, position) => {
-    setSize({ width: ref.style.width, height: ref.style.height });
-    setPosition(position);
-  }, []);
 
   const handleCloseClick = useCallback((event: React.MouseEvent) => {
     event.stopPropagation();
@@ -69,8 +48,6 @@ const Window: React.FC<WindowProps> = ({
         width: startSize.width,
         height: startSize.height,
       }}
-      position={position}
-      size={size}
       bounds="parent"
       dragHandleClassName={styles.windowHeader}
       className={`window ${styles.window} ${windowState[windowId]?.zIndex === Math.max(...Object.values(windowState).map(w => w.zIndex)) ? styles.selectedWindow : ''}`}
@@ -80,16 +57,12 @@ const Window: React.FC<WindowProps> = ({
         visibility: windowState[windowId]?.isVisible ? 'visible' : 'hidden',
       }}
       onMouseDown={handleMouseDown}
-      onDragStop={handleDragStop}
-      onResize={handleResize}
-      disableDragging={isMobile}
-      enableResizing={!isMobile}
     >
       <div className={styles.windowHeader}>
         <div className={styles.windowClose} onDoubleClick={handleCloseClick}></div>
         <div className={styles.windowTitle}>{title}</div>
       </div>
-      <div className={styles.windowContent} style={{ height: 'calc(100% - 24px)', overflow: 'auto' }}>
+      <div className={styles.windowContent}>
         {children}
       </div>
     </Rnd>

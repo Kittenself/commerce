@@ -1,0 +1,28 @@
+.mobileNavigation {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  z-index: 1000;
+}
+
+.mobileNavigation button {
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.windowContainer {
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .windowContainer {
+    padding: 10px;
+  }
+}

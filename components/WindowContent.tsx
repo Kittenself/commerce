@@ -4,6 +4,7 @@ import { mediaContents } from 'app/explore/mediaContent';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import Window from 'windows/windows';
+import styles from './WindowContent.module.css';
 
 const WindowContent: React.FC = () => {
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
@@ -18,11 +19,11 @@ const WindowContent: React.FC = () => {
   };
 
   if (!isClient) {
-    return null; // or a loading indicator
+    return null;
   }
 
   return (
-    <>
+    <div className={styles.windowContainer}>
       {mediaContents.map((content) => (
         <Window
           key={content.id}
@@ -74,11 +75,7 @@ const WindowContent: React.FC = () => {
           )}
         </Window>
       ))}
-      {/* Debugging information */}
-      <div style={{position: 'fixed', top: 0, right: 0, background: 'white', padding: '10px'}}>
-        Windows rendered: {mediaContents.length}
-      </div>
-    </>
+    </div>
   );
 };
 
