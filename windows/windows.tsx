@@ -1,6 +1,6 @@
 "use client";
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Rnd } from 'react-rnd';
+import { Rnd, RndDragCallback, RndResizeCallback } from 'react-rnd';
 import styles from './Windows31.module.css';
 import { useWindowContext } from './windowcontext';
 
@@ -45,12 +45,12 @@ const Window: React.FC<WindowProps> = ({
     bringToFront(windowId);
   }, [bringToFront, windowId]);
 
-  const handleDragStop = useCallback((_e, d) => {
+  const handleDragStop: RndDragCallback = useCallback((_e, d) => {
     setPosition({ x: d.x, y: d.y });
     bringToFront(windowId);
   }, [bringToFront, windowId]);
 
-  const handleResize = useCallback((_e, _direction, ref, _delta, position) => {
+  const handleResize: RndResizeCallback = useCallback((_e, _direction, ref, _delta, position) => {
     setSize({ width: ref.style.width, height: ref.style.height });
     setPosition(position);
   }, []);
