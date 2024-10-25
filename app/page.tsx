@@ -52,7 +52,7 @@ export default function Home() {
             <motion.div variants={itemVariants}>
               <Link href="/explore" className="inline-block group">
                 <span className={`bg-black text-white px-6 sm:px-8 py-3 sm:py-4 text-2xl sm:text-5xl lg:text-4xl transition-all duration-100 ease-in-out transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:filter group-hover:drop-shadow-[7px_7px_0_rgba(0,0,0,1)] active:translate-y-0 active:translate-x-0 active:filter-none ${jacquardFont.className}`}>
-                  <AnimatedText text='Explore →' />
+                  Explore →
                 </span>
               </Link>
             </motion.div>
@@ -68,12 +68,17 @@ export default function Home() {
             </motion.h2>
 
             <motion.p className="text-1xl sm:text-2xl lg:text-3xl px-4 py-2 sm:px-6 sm:py-3" variants={itemVariants}>
-              <AnimatedText text="last-updated:10/13/2024" />
+              <AnimatedText text="last-updated:10/25/2024" />
             </motion.p>
-            <motion.div variants={itemVariants}>
+            <motion.div variants={itemVariants} className="flex justify-between items-center">
               <Link href="/shop" className="inline-block group">
                 <span className={`bg-black text-white px-6 sm:px-8 py-3 sm:py-4 text-2xl sm:text-5xl lg:text-4xl transition-all duration-100 ease-in-out transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:filter group-hover:drop-shadow-[7px_7px_0_rgba(0,0,0,1)] active:translate-y-0 active:translate-x-0 active:filter-none ${jacquardFont.className}`}>
-                  <AnimatedText text='Shop Now →' />
+                  Shop Now →
+                </span>
+              </Link>
+              <Link href="/shopall" className="inline-block group">
+                <span className={`bg-black text-white px-6 sm:px-8 py-3 sm:py-4 text-2xl sm:text-5xl lg:text-4xl transition-all duration-100 ease-in-out transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:filter group-hover:drop-shadow-[7px_7px_0_rgba(0,0,0,1)] active:translate-y-0 active:translate-x-0 active:filter-none ${jacquardFont.className}`}>
+                  Shop All →
                 </span>
               </Link>
             </motion.div>
