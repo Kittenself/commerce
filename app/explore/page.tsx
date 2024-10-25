@@ -1,7 +1,8 @@
-import WindowContent from 'components/WindowContent';
+import dynamic from 'next/dynamic';
 import { WindowProvider } from 'windows/windowcontext';
 import styles from './explore.module.css';
-import { mediaContents } from './mediaContent';
+
+const WindowContent = dynamic(() => import('components/WindowContent'), { ssr: false });
 
 export const metadata = {
   description: 'Explore our interactive content.',
@@ -17,10 +18,6 @@ export default function ExplorePage() {
       <div className={styles.backgroundContainer}>
         <main className={styles.mainContent}>
           <WindowContent />
-          {/* Debugging information */}
-          <div style={{position: 'fixed', bottom: 0, left: 0, background: 'white', padding: '10px'}}>
-            Number of windows: {mediaContents.length}
-          </div>
         </main>
       </div>
     </WindowProvider>

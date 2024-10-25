@@ -2,15 +2,24 @@
 
 import { mediaContents } from 'app/explore/mediaContent';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Window from 'windows/windows';
 
 const WindowContent: React.FC = () => {
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleImageError = (id: string) => {
     setImageErrors(prev => ({ ...prev, [id]: true }));
   };
+
+  if (!isClient) {
+    return null; // or a loading indicator
+  }
 
   return (
     <>
