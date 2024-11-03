@@ -1,4 +1,5 @@
 const plugin = require('tailwindcss/plugin');
+import scrollbar from 'tailwind-scrollbar';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -49,6 +50,7 @@ module.exports = {
           values: theme('transitionDelay')
         }
       );
-    })
+    }),
+    scrollbar({ nocompatible: true }),
   ]
 };
