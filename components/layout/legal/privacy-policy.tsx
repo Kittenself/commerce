@@ -1,6 +1,6 @@
 export default function PrivacyPolicy() {
   return (
-    <div className="prose prose-sm dark:prose-invert">
+    <div className="prose prose-sm max-w-none text-black dark:text-white">
       <h2 className="text-xl font-bold">Privacy Policy</h2>
       <div className="mt-4">
         {/* Add your Privacy Policy content here */}
