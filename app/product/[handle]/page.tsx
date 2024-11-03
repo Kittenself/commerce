@@ -54,7 +54,7 @@ export default async function ProductPage({ params }: { params: { handle: string
     <>
       <Navbar />
       <div className="mt-4" />
-      <ProductDisplay product={product} isModal={false} />
+      <ProductDisplay product={product} />
       <div className="mt-4" />
       <Footer />
     </>

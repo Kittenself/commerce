@@ -6,13 +6,11 @@ import { ProductDescription } from 'components/product/product-description';
 import { Product } from 'lib/shopify/types';
 import { Suspense } from 'react';
 
-
 interface ProductDisplayProps {
   product: Product;
-  isModal?: boolean;
 }
 
-export function ProductDisplay({ product, isModal }: ProductDisplayProps) {
+export function ProductDisplay({ product }: ProductDisplayProps) {
   const productJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -32,17 +30,13 @@ export function ProductDisplay({ product, isModal }: ProductDisplayProps) {
 
   return (
     <ProductProvider>
-      {!isModal && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(productJsonLd)
-          }}
-        />
-      )}
-      <div className={`flex flex-col border border-neutral-200 bg-white ${
-        isModal ? 'p-4 md:p-6' : 'p-8 md:p-12'
-      } lg:flex-row lg:gap-8 dark:border-neutral-800 dark:bg-white`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productJsonLd)
+        }}
+      />
+      <div className="flex flex-col border border-neutral-200 bg-white p-8 md:p-12 lg:flex-row lg:gap-8 dark:border-neutral-800 dark:bg-white">
         <div className="h-full w-full basis-full lg:basis-4/6">
           <Suspense
             fallback={
