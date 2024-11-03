@@ -6,11 +6,13 @@ import { Fragment } from 'react';
 export default function Modal({
   children,
   isOpen,
-  onClose
+  onClose,
+  className = ''
 }: {
   children: React.ReactNode;
   isOpen: boolean;
   onClose: () => void;
+  className?: string;
 }) {
   return (
     <Transition show={isOpen} as={Fragment}>
@@ -38,10 +40,19 @@ export default function Modal({
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-lg bg-white p-6 text-left align-middle shadow-xl transition-all dark:bg-neutral-900">
-                <div className="max-h-[80vh] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-neutral-300 dark:scrollbar-thumb-neutral-600 scrollbar-track-transparent hover:scrollbar-thumb-neutral-400 dark:hover:scrollbar-thumb-neutral-500">
-                  {children}
-                </div>
+              <Dialog.Panel 
+                className={`w-full transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all ${className}`}
+              >
+                <button
+                  onClick={onClose}
+                  className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+                >
+                  <span className="sr-only">Close</span>
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+                {children}
               </Dialog.Panel>
             </Transition.Child>
           </div>
