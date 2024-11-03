@@ -1,21 +1,21 @@
 export default function PrivacyPolicy() {
   return (
-    <div className="prose prose-sm max-w-none text-black dark:text-white">
-      <h2 className="text-xl font-bold">Privacy Policy</h2>
-      <div className="mt-4 space-y-6">
-        <p>Last updated: {new Date().toLocaleDateString()}</p>
+    <div className="prose prose-sm dark:prose-invert max-w-none">
+      <h2 className="text-2xl font-bold text-center mb-6">Privacy Policy</h2>
+      <div className="space-y-6">
+        <p className="text-center">
+          Last updated: {new Date().toLocaleDateString()}
+        </p>
         
-        <section>
-          <p>
-            At Modamosaic, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, 
-            use, disclose, and safeguard your information when you visit our website. By using our site, you consent 
-            to the practices described in this policy.
-          </p>
-        </section>
+        <p className="text-center">
+          At Modamosaic, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, 
+          use, disclose, and safeguard your information when you visit our website. By using our site, you consent 
+          to the practices described in this policy.
+        </p>
 
         <section>
-          <h3 className="text-lg font-semibold">Information We Collect</h3>
-          <ul className="list-disc pl-6 space-y-2">
+          <h3 className="text-xl font-semibold mb-2">Information We Collect</h3>
+          <ul className="list-disc pl-6 mt-2">
             <li>
               <strong>Personal Information:</strong> We may collect personal information that you provide directly 
               to us, such as your name, email address, phone number, and any other details you choose to share 
@@ -35,9 +35,9 @@ export default function PrivacyPolicy() {
         </section>
 
         <section>
-          <h3 className="text-lg font-semibold">How We Use Your Information</h3>
+          <h3 className="text-xl font-semibold mb-2">How We Use Your Information</h3>
           <p>Modamosaic may use your information for various purposes, including:</p>
-          <ul className="list-disc pl-6 space-y-2">
+          <ul className="list-disc pl-6 mt-2">
             <li>
               <strong>To Provide and Maintain Our Service:</strong> We use your personal information to fulfill 
               your requests and provide customer support.
@@ -58,12 +58,12 @@ export default function PrivacyPolicy() {
         </section>
 
         <section>
-          <h3 className="text-lg font-semibold">Sharing Your Information</h3>
+          <h3 className="text-xl font-semibold mb-2">Sharing Your Information</h3>
           <p>
             We do not sell or rent your personal information to third parties. We may share your information in 
             the following situations:
           </p>
-          <ul className="list-disc pl-6 space-y-2">
+          <ul className="list-disc pl-6 mt-2">
             <li>
               <strong>Service Providers:</strong> We may employ third-party companies and individuals to facilitate 
               our services, provide support, or perform services on our behalf. These third parties have access to 
@@ -78,7 +78,7 @@ export default function PrivacyPolicy() {
         </section>
 
         <section>
-          <h3 className="text-lg font-semibold">Data Security</h3>
+          <h3 className="text-xl font-semibold mb-2">Data Security</h3>
           <p>
             We strive to use commercially acceptable means to protect your personal information. However, no method 
             of transmission over the internet or electronic storage is 100% secure. While we aim to protect your 
@@ -87,28 +87,28 @@ export default function PrivacyPolicy() {
         </section>
 
         <section>
-          <h3 className="text-lg font-semibold">Your Rights</h3>
+          <h3 className="text-xl font-semibold mb-2">Your Rights</h3>
           <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
-          <ul className="list-disc pl-6 space-y-2">
+          <ul className="list-disc pl-6 mt-2">
             <li>The right to access, correct, or delete your personal information.</li>
             <li>The right to restrict or object to our processing of your personal information.</li>
             <li>The right to data portability.</li>
           </ul>
           <p>
             If you wish to exercise these rights, please contact us at{' '}
-            <a href="mailto:corporate@modamosaic.org" className="text-blue-600 dark:text-blue-400">
+            <a href="mailto:corporate@modamosaic.org" className="text-blue-600 dark:text-blue-400 hover:underline">
               corporate@modamosaic.org
             </a>
           </p>
         </section>
 
         <section>
-          <h3 className="text-lg font-semibold">Shopify and Third-Party Services</h3>
+          <h3 className="text-xl font-semibold mb-2">Shopify and Third-Party Services</h3>
           <p>
             We use Shopify to power our online store. Your personal information may be stored through Shopify's 
             data storage, databases, and general application. They store your data on secure servers behind a firewall.
           </p>
-          <ul className="list-disc pl-6 space-y-2">
+          <ul className="list-disc pl-6 mt-2">
             <li>
               <strong>Payment Information:</strong> Shopify processes your payment information in accordance with 
               their privacy policy. We do not store your credit card information or other payment details.
@@ -121,10 +121,10 @@ export default function PrivacyPolicy() {
         </section>
 
         <section>
-          <h3 className="text-lg font-semibold">Contact Us</h3>
+          <h3 className="text-xl font-semibold mb-2">Contact Us</h3>
           <p>
             If you have any questions or concerns regarding this Privacy Policy, please contact us at:{' '}
-            <a href="mailto:corporate@modamosaic.org" className="text-blue-600 dark:text-blue-400">
+            <a href="mailto:corporate@modamosaic.org" className="text-blue-600 dark:text-blue-400 hover:underline">
               corporate@modamosaic.org
             </a>
           </p>

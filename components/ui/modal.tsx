@@ -14,7 +14,6 @@ export default function Modal({
   onClose: () => void;
   className?: string;
 }) {
-  // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -53,7 +52,7 @@ export default function Modal({
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel 
-                className={`w-full max-w-2xl max-h-[80vh] overflow-y-auto transform rounded-2xl bg-white dark:bg-neutral-900 p-6 text-left align-middle shadow-xl transition-all ${className}`}
+                className={`w-full max-w-2xl max-h-[80vh] overflow-y-auto transform bg-white dark:bg-neutral-900 p-6 text-left align-middle shadow-xl transition-all ${className}`}
               >
                 <button
                   onClick={onClose}
