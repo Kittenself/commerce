@@ -4,12 +4,14 @@ import { Navbar } from 'components/layout/navbar';
 
 export default function AllPage() {
   return (
-    <>
+    <div className="flex min-h-screen flex-col">
       <Navbar />
-      <div className="mt-4" />
-      <AllProducts />
-      <div className="mt-4" />
+      <main className="flex-grow">
+        <div className="mt-4" />
+        <AllProducts />
+        <div className="mt-4" />
+      </main>
       <Footer />
-    </>
+    </div>
   );
 } 
