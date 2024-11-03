@@ -11,11 +11,11 @@ export const metadata = {
 
 // Hardcoded product handles or names
 const FEATURED_PRODUCT_HANDLES = [
-  'based-god',
-  'based-god',
-  'based-god',
-  'based-god',
-  'based-god'
+  'cool-zip-up',
+  'cool-zip-up',
+  'cool-zip-up',
+  'cool-zip-up',
+  'cool-zip-up'
 ];
 
 export default async function ShopPage() {
@@ -30,7 +30,7 @@ export default async function ShopPage() {
           baseball's super duper shop
         </h1>
         <h2 className="mb-8 text-2xl font-italic text-white bg-yellow-300 inline-block px-4 py-2">
-        i like windows and lily chou chou and lil b
+        i like windows and lily chou chou and zip ups
         </h2>
         <div className="space-y-8">
           {products.map((product, index) => 
