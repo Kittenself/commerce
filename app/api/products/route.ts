@@ -5,11 +5,15 @@ export const runtime = 'edge';
 
 export async function GET() {
   try {
+    console.log('Fetching products from "all" collection...');
     const products = await getCollectionProducts({
       collection: 'all'
     });
     
+    console.log('Products fetched:', products?.length || 0);
+    
     if (!products) {
+      console.log('No products found');
       return NextResponse.json({ products: [] });
     }
 
