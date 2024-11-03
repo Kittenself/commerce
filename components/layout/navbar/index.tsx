@@ -26,7 +26,7 @@ export async function Navbar() {
         <div className="flex w-full md:w-1/3">
           <Link href="/" className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6">
             <div className="ml-2 flex-none text-lg font-extrabold uppercase md:hidden lg:block text-black px-3 py-1" style={outlineStyle}>
-              <AnimatedText text="MODAMOSAIC/collection/baseball" />
+              <AnimatedText text="MODAMOSAIC" />
             </div>
           </Link>
           <div className="flex gap-6 text-sm">
