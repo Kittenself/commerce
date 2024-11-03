@@ -29,11 +29,6 @@ export async function Navbar() {
               <AnimatedText text="MODAMOSAIC" />
             </div>
           </Link>
-          <div className="flex gap-6 text-sm">
-            <Link href="/all" className="text-neutral-500 underline-offset-4 hover:text-black hover:underline">
-              All Products
-            </Link>
-          </div>
           {menu.length ? (
             <ul className="hidden gap-6 text-sm md:flex md:items-center">
               {menu.map((item: Menu) => (
