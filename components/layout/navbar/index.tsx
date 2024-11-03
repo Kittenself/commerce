@@ -52,6 +52,15 @@ export async function Navbar() {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <Link
+                    href="/shop-all"
+                    prefetch={true}
+                    className="text-neutral-500 underline-offset-4 hover:text-black hover:underline dark:text-neutral-400 dark:hover:text-neutral-300"
+                  >
+                    Shop All
+                  </Link>
+                </li>
               </ul>
             ) : null}
           </div>

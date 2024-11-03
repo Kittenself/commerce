@@ -1,52 +1,31 @@
 'use client';
 
-import { Dialog, Transition } from '@headlessui/react';
-import { Fragment } from 'react';
+import { Dialog } from '@headlessui/react';
+import { XMarkIcon } from '@heroicons/react/24/outline';
+import { ReactNode } from 'react';
 
-export default function Modal({
-  children,
-  isOpen,
-  onClose
-}: {
-  children: React.ReactNode;
+type ModalProps = {
+  children: ReactNode;
   isOpen: boolean;
   onClose: () => void;
-}) {
-  return (
-    <Transition show={isOpen} as={Fragment}>
-      <Dialog onClose={onClose} className="relative z-50">
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div className="fixed inset-0 bg-black bg-opacity-25" />
-        </Transition.Child>
+  className?: string;
+};
 
-        <div className="fixed inset-0 overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4 text-center">
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
-            >
-              <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-lg bg-white p-6 text-left align-middle shadow-xl transition-all dark:bg-neutral-900">
-                <div className="max-h-[80vh] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-neutral-300 dark:scrollbar-thumb-neutral-600 scrollbar-track-transparent hover:scrollbar-thumb-neutral-400 dark:hover:scrollbar-thumb-neutral-500">
-                  {children}
-                </div>
-              </Dialog.Panel>
-            </Transition.Child>
-          </div>
-        </div>
-      </Dialog>
-    </Transition>
+export default function Modal({ children, isOpen, onClose, className }: ModalProps) {
+  return (
+    <Dialog open={isOpen} onClose={onClose} className="relative z-50">
+      <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+      <div className="fixed inset-0 flex items-center justify-center p-4">
+        <Dialog.Panel className={`relative bg-white ${className || ''}`}>
+          <button
+            onClick={onClose}
+            className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
+          >
+            <XMarkIcon className="h-6 w-6" />
+          </button>
+          {children}
+        </Dialog.Panel>
+      </div>
+    </Dialog>
   );
 } 
