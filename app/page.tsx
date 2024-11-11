@@ -68,7 +68,7 @@ export default function Home() {
             </motion.h2>
 
             <motion.p className="text-1xl sm:text-2xl lg:text-3xl px-4 py-2 sm:px-6 sm:py-3" variants={itemVariants}>
-              <AnimatedText text="last-updated:11/7/2024" />
+              <AnimatedText text="last-updated:11/10/2024" />
             </motion.p>
             <motion.div variants={itemVariants} className="flex justify-between items-center">
               <Link href="/shop" className="inline-block group">
