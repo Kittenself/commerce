@@ -1,82 +1,29 @@
 .backgroundContainer {
-  background-color: #008080;
-  min-height: 100vh;
-  padding: 2rem;
   position: relative;
+  min-height: 100vh;
+  width: 100vw;
   overflow: hidden;
 }
 
 .backgroundContainer::before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    linear-gradient(45deg, rgba(255,255,255,.1) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(255,255,255,.1) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(255,255,255,.1) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,.1) 75%);
-  background-size: 20px 20px;
-  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-  pointer-events: none;
+  background-image: url('/pictures/vhm_1725304893.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 
 .mainContent {
-  position: relative;
-  z-index: 1;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.parallaxSection {
-  background-image: url('/pictures/download (7).png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-}
-
-.parallaxSection::before {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(2px);
-}
-
-/* Smooth scrolling */
-:global(html) {
-  scroll-behavior: smooth;
-}
-
-/* Custom scrollbar */
-:global(::-webkit-scrollbar) {
-  width: 12px;
-}
-
-:global(::-webkit-scrollbar-track) {
-  background: #c0c0c0;
-  border: 1px solid #808080;
-}
-
-:global(::-webkit-scrollbar-thumb) {
-  background: #808080;
-  border: 1px solid #c0c0c0;
-}
-
-:global(::-webkit-scrollbar-thumb:hover) {
-  background: #666666;
-}
-
-/* Add smooth transition for parallax elements */
-:global(.parallax-element) {
-  will-change: transform;
-  transition: transform 0.1s ease-out;
+  overflow: hidden;
 }
