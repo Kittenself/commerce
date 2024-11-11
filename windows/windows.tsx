@@ -37,37 +37,44 @@ const Window: React.FC<WindowProps> = ({
     };
 
     const checkBounds = () => {
-      if (rndRef.current) {
-        const parentRect = rndRef.current.getParent().getBoundingClientRect();
-        const windowRect = rndRef.current.getSelfElement().getBoundingClientRect();
+      const rndCurrent = rndRef.current;
+      if (!rndCurrent) return;
 
-        let newX = position.x;
-        let newY = position.y;
+      const parent = rndCurrent.getParent();
+      const selfElement = rndCurrent.getSelfElement();
+      
+      if (!parent || !selfElement) return;
 
-        if (newX < 0) newX = 0;
-        if (newY < 0) newY = 0;
-        if (newX + windowRect.width > parentRect.width) {
-          newX = parentRect.width - windowRect.width;
-        }
-        if (newY + windowRect.height > parentRect.height) {
-          newY = parentRect.height - windowRect.height;
-        }
+      const parentRect = parent.getBoundingClientRect();
+      const windowRect = selfElement.getBoundingClientRect();
 
-        if (newX !== position.x || newY !== position.y) {
-          setPosition({ x: newX, y: newY });
-        }
+      let newX = position.x;
+      let newY = position.y;
+
+      if (newX < 0) newX = 0;
+      if (newY < 0) newY = 0;
+      if (newX + windowRect.width > parentRect.width) {
+        newX = parentRect.width - windowRect.width;
+      }
+      if (newY + windowRect.height > parentRect.height) {
+        newY = parentRect.height - windowRect.height;
+      }
+
+      if (newX !== position.x || newY !== position.y) {
+        setPosition({ x: newX, y: newY });
       }
     };
 
     checkMobile();
     checkBounds();
     
-    window.addEventListener('resize', () => {
+    const handleResize = () => {
       checkMobile();
       checkBounds();
-    });
-    
-    return () => window.removeEventListener('resize', checkMobile);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, [windowId, bringToFront, windowState, position]);
 
   const handleMouseDown = useCallback(() => {
