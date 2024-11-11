@@ -1,29 +1,202 @@
-.backgroundContainer {
+.pageContainer {
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y proximity;
   position: relative;
-  min-height: 100vh;
-  width: 100vw;
-  overflow: hidden;
 }
 
-.backgroundContainer::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('/pictures/vhm_1725304893.png');
+.windowsSection {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  background: url('/pictures/vhm_1725304893.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: -1;
+  overflow: hidden;
+  scroll-snap-align: start;
 }
 
-.mainContent {
+.windowsContainer {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+}
+
+.contentSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contentPage {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.contentOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contentPage:hover .contentOverlay {
+  opacity: 1;
+}
+
+.contentLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.artistLink {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.artistLink:hover {
+  background: white;
+  color: black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .artistLink {
+    font-size: 1.2rem;
+    padding: 8px 16px;
+  }
+  
+  .contentLinks {
+    gap: 15px;
+  }
+}
+
+/* Remove the html styles as they can interfere with other pages */
+/* Instead, apply scroll behavior to the container */
+
+/* Game Section */
+.gameSection {
+  width: 100%;
+  height: 95vh;
+  background: #ffeb3b;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+
+.gameContent {
+  max-width: 800px;
+  width: 100%;
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gamePreview {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.pixelImage {
+  image-rendering: pixelated;
+  border: 2px solid #ff69b4;
+  padding: 10px;
+  background: #ffd4e5;
+}
+
+.gameText {
+  text-align: left;
+}
+
+.gameText h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.gameText ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.gameText li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.gameText li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ff69b4;
+}
+
+.gameText p {
+  font-style: italic;
+  color: #666;
+}
+
+/* Keep existing responsive styles */
+@media (max-width: 768px) {
+  .gameContent {
+    padding: 20px;
+  }
+
+  .gamePreview {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pixelImage {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Third Section */
+.thirdSection {
+  width: 100%;
+  height: 100vh;
+  background: #4CAF50;
+  scroll-snap-align: start;
+  position: relative;
 }

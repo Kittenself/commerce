@@ -36,10 +36,39 @@ const Window: React.FC<WindowProps> = ({
       setIsMobile(window.innerWidth <= 768);
     };
 
+    const checkBounds = () => {
+      if (rndRef.current) {
+        const parentRect = rndRef.current.getParent().getBoundingClientRect();
+        const windowRect = rndRef.current.getSelfElement().getBoundingClientRect();
+
+        let newX = position.x;
+        let newY = position.y;
+
+        if (newX < 0) newX = 0;
+        if (newY < 0) newY = 0;
+        if (newX + windowRect.width > parentRect.width) {
+          newX = parentRect.width - windowRect.width;
+        }
+        if (newY + windowRect.height > parentRect.height) {
+          newY = parentRect.height - windowRect.height;
+        }
+
+        if (newX !== position.x || newY !== position.y) {
+          setPosition({ x: newX, y: newY });
+        }
+      }
+    };
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
+    checkBounds();
+    
+    window.addEventListener('resize', () => {
+      checkMobile();
+      checkBounds();
+    });
+    
     return () => window.removeEventListener('resize', checkMobile);
-  }, [windowId, bringToFront, windowState]);
+  }, [windowId, bringToFront, windowState, position]);
 
   const handleMouseDown = useCallback(() => {
     bringToFront(windowId);
