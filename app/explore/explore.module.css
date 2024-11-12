@@ -26,6 +26,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  padding: 1rem;
 }
 
 .contentSection {
@@ -199,4 +200,15 @@
   background: #4CAF50;
   scroll-snap-align: start;
   position: relative;
+}
+
+/* Add these new mobile styles */
+@media (max-width: 768px) {
+  .windowsSection {
+    height: 100vh;
+  }
+
+  .windowsContainer {
+    padding: 0.5rem;
+  }
 }
